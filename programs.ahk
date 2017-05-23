@@ -2,7 +2,7 @@
 ;+ = shift
 ;! = alt
 ;# = super
-Menu, Tray, Icon, C:\Users\it12\Documents\AHK\volume.png.ico, 1, 1
+Menu, Tray, Icon, volume.png.ico, 1, 1
 ;Ctrl Shift num+ = Volume_UP
 ^+NumpadSub::
 send {Volume_UP}

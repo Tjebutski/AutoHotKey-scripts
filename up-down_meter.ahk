@@ -1,6 +1,6 @@
 #SingleInstance, Force
 
-Menu, Tray, Icon, C:\Users\it12\Documents\AHK\Dtafalonso-Android-Lollipop-Downloads.ico, 1, 1
+Menu, Tray, Icon, Dtafalonso-Android-Lollipop-Downloads.ico, 1, 1
 
 Gui, -Caption +Border +AlwaysOnTop +ToolWindow
 Gui, Color, EEAA99

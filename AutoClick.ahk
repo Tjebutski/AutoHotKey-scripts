@@ -3,7 +3,7 @@
 ;! = alt
 ;# = super
 
-Menu, Tray, Icon, C:\Users\it12\Documents\AHK\Graphicloads-Seo-Services-Pay-per-click.ico, 1, 1
+Menu, Tray, Icon, Graphicloads-Seo-Services-Pay-per-click.ico, 1, 1
 
 toggle = 0
 #MaxThreadsPerHotkey 2

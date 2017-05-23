@@ -6,7 +6,8 @@
 SetBatchLines, -1
 ListLines, Off
 CoordMode, Mouse, Screen
-Menu, Tray, Icon, C:\Users\it12\Documents\AHK\Jonas-Rask-Danish-Royalty-Free-Monitor.ico, 1, 1
+Menu, Tray, Icon, Jonas-Rask-Danish-Royalty-Free-Monitor.ico, 1, 1
+
 
 ; Settings
 transN                            := 255                                              ; 0=transparent, 255=opaque
@@ -16,7 +17,7 @@ DisplayTime2                      := 500                                        
 Font                               = script                                           ; font
 Xpos                               = 75                                               ; x position
 BackgroundColor                    = White                                            ; background color
-Trans_A                            := 200                                              ; transparency after
+Trans_A                            := "200"                                              ; transparency after
 
 
 
@@ -128,7 +129,7 @@ ShowHotkey:
             if (Faded < 0.1) {
                 adjusted_X = %Xpos%                                                      ;;;;;;;;X pos after
                 adjusted_Y := A_ScreenHeight - 100                                    ;;;;;;;;Y pos after
-                WinSet, Transparent, % %Trans_A%                                            ;;;;;;;;transparency after
+                WinSet, Transparent, %Trans_A%                                            ;;;;;;;;transparency after
                 PreviousKey :=
             } else {
                 adjusted_X = %Xpos%                                                       ;;;;;;;;X pos during
