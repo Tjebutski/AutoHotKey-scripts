@@ -14,10 +14,12 @@ transN                            := 255                                        
 ShowSingleKey                     := True                                             ; display A-Z, Enter and other keys pressed without modifier (Ctr, Alt, ...)
 DisplayTime                       := 000                                              ; time to fade, in milliseconds
 DisplayTime2                      := 500                                              ; time staying after
-Font                               = script                                           ; font
-Xpos                               = 75                                               ; x position
+Font                               = comic sans MS                                    ; font
+Font_Mod                           = bold                                             ; Bold or Italic font
+Xpos                               = 75                                               ; x position from left
+Ypos                              := 100                                              ; Y position from buttom
 BackgroundColor                    = White                                            ; background color
-Trans_A                            := "200"                                              ; transparency after
+Trans_A                            := "200"                                           ; transparency after
 
 
 
@@ -27,8 +29,8 @@ Trans_A                            := "200"                                     
 Gui, +AlwaysOnTop -Caption +Owner +LastFound +E0x20
 Gui, Margin, 0, 0
 Gui, Color, %BackgroundColor%
-Gui, Font, cRed s30 Bold, %Font%                     ; Font
-Gui, Add, Text, vHotkeyText Center y50
+Gui, Font, cRed s30 %Font_Mod%, %Font%                     ; Font
+Gui, Add, Text, vHotkeyText Center y50               ; Text position
 WinSet, Transparent, %transN%
 Winset, AlwaysOnTop, On
 SetTimer, ShowHotkey, 1
@@ -125,15 +127,15 @@ ShowHotkey:
         }
         MouseGetPos, X, Y
         if (prev_LastHotkeyPressedTime != LastHotkeyPressedTime or (((abs(prev_X - X) > 1 or abs(prev_Y - Y) > 1) or Faded < 0) and PreviousKey != "")) {
-            text_w := StrLen(key) * 25 + 25                                           ;;;;;;;;Padding X
+            text_w := StrLen(key) * 25 + 25                                               ;;;;;;;;Padding X
             if (Faded < 0.1) {
-                adjusted_X = %Xpos%                                                      ;;;;;;;;X pos after
-                adjusted_Y := A_ScreenHeight - 100                                    ;;;;;;;;Y pos after
+                adjusted_X = %Xpos%                                                       ;;;;;;;;X pos after
+                adjusted_Y := A_ScreenHeight - 100                                        ;;;;;;;;Y pos after
                 WinSet, Transparent, %Trans_A%                                            ;;;;;;;;transparency after
                 PreviousKey :=
             } else {
                 adjusted_X = %Xpos%                                                       ;;;;;;;;X pos during
-                adjusted_Y := A_ScreenHeight - 100                                    ;;;;;;;;Y pos during
+                adjusted_Y := A_ScreenHeight - 100                                        ;;;;;;;;Y pos during
             }
             GuiControl,, HotkeyText, %key%
             GuiControl, Move, HotkeyText, +AlwaysOnTop w%text_w%
